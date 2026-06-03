@@ -1,11 +1,13 @@
 
 #Start-Screen{
+    font-size: min(5vw,5vh);
     display : flex ;
     flex-direction : column ;
     align-items: center; 
 }
 #playAI{
     color : cyan ;
+    font-size: min(4vw,4vh);
     background-color: rgb(203, 45, 45);
     border-radius: 30px;
     font-family: 'Segoe UI' ;
@@ -19,12 +21,14 @@
 }
 
 #AImodes{
+    font-size: min(4vw,4vh);
     display : none ;
     flex-direction : column ;
     align-items: center; 
 }
 
 .AImodes{
+    font-size: min(4vw,4vh);
     margin-top: 15px ;
     color : cyan ;
     background-color: rgb(203, 45, 45);
@@ -41,6 +45,7 @@
 }
 
 #playlocal{
+    font-size: min(4vw,4vh);
      color : cyan ;
     background-color: rgb(203, 45, 45);
     border-radius: 30px;
@@ -54,6 +59,7 @@
     padding: 4px 8px ;
 }
 #Game-Screen {
+    font-size: min(3vw,2vh);
     display: none;
     flex-direction: column;
     align-items: center;
@@ -62,7 +68,7 @@
 }
 #Score {
     display : flex ;
-    gap : 47vw;
+    gap : 45vw;
     color : red ;
 }
 
