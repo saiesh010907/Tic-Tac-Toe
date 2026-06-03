@@ -1,0 +1,138 @@
+
+#Start-Screen{
+    display : flex ;
+    flex-direction : column ;
+    align-items: center; 
+}
+#playAI{
+    color : cyan ;
+    background-color: rgb(203, 45, 45);
+    border-radius: 30px;
+    font-family: 'Segoe UI' ;
+    cursor: pointer;
+    transition: background-color  0.4s, padding 0.4s;
+}
+
+#playAI:hover{
+   background-color: rgb(255, 47, 0);
+   padding: 4px 8px ;
+}
+
+#AImodes{
+    display : none ;
+    flex-direction : column ;
+    align-items: center; 
+}
+
+.AImodes{
+    margin-top: 15px ;
+    color : cyan ;
+    background-color: rgb(203, 45, 45);
+    border-radius: 30px;
+    font-family: 'Segoe UI' ;
+    cursor: pointer;
+    transition: background-color  0.4s , padding 0.6s;
+}
+
+.AImodes:hover{
+    background-color: rgb(255, 47, 0);
+   padding: 4px 8px ;
+
+}
+
+#playlocal{
+     color : cyan ;
+    background-color: rgb(203, 45, 45);
+    border-radius: 30px;
+    font-family: 'Segoe UI' ;
+    cursor: pointer;
+    transition: background-color  0.4s, padding 0.4s;
+}
+
+#playlocal:hover{
+    background-color: rgb(255, 47, 0);
+    padding: 4px 8px ;
+}
+#Game-Screen {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+
+
+}
+#Score {
+    display : flex ;
+    gap : 47vw;
+    color : red ;
+}
+
+
+#Board {
+    display : grid ;
+    grid-template-columns : 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    background-color : black;
+    width : min(70vh,70vw) ;
+    aspect-ratio: 1/1;
+    border : 1px solid black
+}
+
+
+
+#Board div {
+    display: flex;
+    background-color : rgb(111, 111, 235) ; 
+    border : 1px solid black ; 
+    font-size : min(15vw,15vh) ;
+    color: rgb(255, 255, 0);
+    align-items: center;
+    justify-content: center;
+    transition : background-color  0.4s;
+    cursor: pointer;
+    border-radius: 20px;
+
+
+}
+
+#Board div:hover{
+    background-color:  rgb(111, 111, 255) ;
+}
+
+#Body {
+    background-color: rgb(0, 0, 0);
+    color: greenyellow;
+    display : flex ;
+    height : 100vh ;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#restart {
+    color : cyan ;
+    background-color: rgb(203, 45, 45);
+    border-radius: 30px;
+    font-family: 'Segoe UI' ;
+    cursor: pointer;
+    transition: background-color  0.4s;
+    padding: 8px 16px;
+    font-size: 1rem;
+}
+
+#restart:hover {
+    background-color: rgb(255, 47, 0);
+}
+#GameOver{
+    margin-bottom:0 ;
+    margin-top: 0.5em ; 
+}
+
+#winner{
+    margin-bottom: 0;
+    margin-top: 0.5em ; 
+}
+ 
+#heading{
+    margin-top: 0.5em;
+    margin-bottom : 0.5em ;
+}
