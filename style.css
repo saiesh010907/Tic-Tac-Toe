@@ -105,7 +105,7 @@
 }
 
 #Body {
-    background-color: rgb(0, 0, 0);
+    background: linear-gradient(to bottom, rgb(41, 1, 41), black);
     color: greenyellow;
     display : flex ;
     height : 100vh ;
@@ -141,4 +141,48 @@
 #heading{
     margin-top: 0.5em;
     margin-bottom : 0.5em ;
+}
+
+@keyframes popAnimation {
+    0% {
+        transform: scale(0);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes winanimation {
+    0% {
+        transform:scale(1);
+    }
+    
+    100% {
+        transform:scale(2);
+    }
+}
+.pop {
+    animation: popAnimation 0.3s;
+}
+
+.winanim{
+    animation : winanimation 1s forwards;
+}
+
+.Homebutton {
+    position : absolute ;
+    top : 2vw ;
+    left : 2vw ;
+    color : cyan ;
+    font-size: min(4vw,4vh);
+    background-color: rgb(203, 45, 45);
+    border-radius: 30px;
+    font-family: 'Segoe UI' ;
+    cursor: pointer;
+    transition: background-color  0.4s, padding 0.4s;
 }
