@@ -67,6 +67,7 @@ function makeMove(index) {
   } else if (board[index] == "") {
     board[index] = turn;
     cells[index].textContent = turn;
+    cells[index].classList.add("pop");
 
     if (board[0] == turn && board[1] == turn && board[2] == turn) {
       Gameover = true;
@@ -186,6 +187,7 @@ function makeMove(index) {
     }
 
     if (Gameover == true) {
+      game.classList.add("winanim");
       Xscore.textContent = "Player X : " + Xwins;
       if(mode == "AI"){
         Oscore.textContent = "AI : " + Owins;
@@ -299,26 +301,27 @@ game.textContent = "Current Turn : " + turn;
 Xscore.textContent = "Player X : " + Xwins;
 cells.forEach((cell, index) => {
   cell.addEventListener("click", () => {
-    makeMove(index);
-    if(mode == "AI"&&Gameover == false){
-        let move ;
-        if(AImode == "easy"){
-            if(Math.random()>0.3){
-                move = randomIndex();
+    if(board[index] == ""){
+        makeMove(index);
+        if(mode == "AI"&&Gameover == false){
+            let move ;
+            if(AImode == "easy"){
+                if(Math.random()>0.3){
+                    move = randomIndex();
+                }else{
+                    move = bestAImove();
+                }
+            }else if(AImode == "medium" ){
+                if(Math.random()>0.7){
+                    move = randomIndex();
+                }else{
+                    move = bestAImove();
+                }
             }else{
                 move = bestAImove();
             }
-        }else if(AImode == "medium" ){
-            if(Math.random()>0.7){
-                move = randomIndex();
-            }else{
-                move = bestAImove();
-            }
-        }else{
-            move = bestAImove();
-        }
-        makeMove(move);
-    }
+            makeMove(move);
+        }}
   });
 });
 
@@ -346,7 +349,22 @@ Reset.addEventListener("click", () => {
     cell.textContent = "";
     cell.style.color = "";
     cell.style.backgroundColor = "";
+    cell.classList.remove("pop");
+    game.classList.remove("winanim");
+    
   });
   winn.textContent = "";
   game.textContent = "Current Turn : " + turn;
 });
+
+let homebutton1 = document.getElementById("Homebutton1");
+homebutton1.addEventListener("click",() => {
+    location.reload();
+})
+
+let homebutton2 = document.getElementById("Homebutton2");
+homebutton2.addEventListener("click",() => {
+    location.reload();
+})
+
+
