@@ -31,6 +31,7 @@ let Gmscreen = document.getElementById("Game-Screen");
 let AImodes_screen = document.getElementById("AImodes");
 let AImode = "";
 let empty_cells =[] ;
+let AIchance = false ;
 playAI.addEventListener("click", () => {
   AImodes_screen.style.display = "flex";
   Stscreen.style.display = "none";
@@ -301,7 +302,7 @@ game.textContent = "Current Turn : " + turn;
 Xscore.textContent = "Player X : " + Xwins;
 cells.forEach((cell, index) => {
   cell.addEventListener("click", () => {
-    if(board[index] == ""){
+    if(board[index] == "" && AIchance == false){
         makeMove(index);
         if(mode == "AI"&&Gameover == false){
             let move ;
@@ -320,7 +321,14 @@ cells.forEach((cell, index) => {
             }else{
                 move = bestAImove();
             }
-            makeMove(move);
+            AIchance = true ;
+            setTimeout(() => {
+            if(Gameover == false){
+              makeMove(move);
+              }
+              AIchance = false ;
+            }, 500);
+            
         }}
   });
 });
