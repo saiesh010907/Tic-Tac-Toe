@@ -327,7 +327,7 @@ cells.forEach((cell, index) => {
               makeMove(move);
               }
               AIchance = false ;
-            }, 500);
+            }, 1000);
             
         }}
   });
